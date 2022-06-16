@@ -38,3 +38,19 @@ Cuando diga:    Significa:
             while len(guess) != NUM_DIGITS or not guess.isdecimal():
                 print(f'Intento #{numGuesses}')
             guess = input('> ')
+
+            clues = getClues(guess, secretNum)
+            print(clues)
+            guess += 1
+
+            if guess == secretNum:
+                break #Adivinaron asi que el loop se rompe.
+            if numGuesses > MAX_GUESSES:
+                print('Se te acabaron los intentos :(')
+                print(f'Tu numero secreto era {secretNum}')
+
+            #Pregunta si queres jugar otra vez.
+            print('Queres jugar otra vez? (si/no)')
+            if not input('> ').lower().startwith('y'):
+                break
+            print('GRACIAS POR JUGAR')
