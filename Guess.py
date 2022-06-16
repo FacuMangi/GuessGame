@@ -1,11 +1,11 @@
-
-
-
-
-
-
-
 import random
+from . import getSecretNum
+from . import getClues
+
+
+
+
+
 
 NUM_DIGITS = 3
 MAX_GUESSES = 10
