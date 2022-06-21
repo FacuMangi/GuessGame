@@ -1,7 +1,7 @@
 import random
 def getSecretNum(NUM_DIGITS):
     #Devuelve un string compuesto por los digitos random unicos de NUMDIGITS.
-    numbers = list(range(10))
+    numbers = list('0123456789')
     random.shuffle(numbers)
     
     #Agarra los primeros 3 numeros de la lista numbers y los agrega a secretNum como string.

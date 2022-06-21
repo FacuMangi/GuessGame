@@ -1,6 +1,7 @@
 import random
-from . import getSecretNum
-from . import getClues
+from SecretNum import getSecretNum
+import Clues
+from itsOnlyDigits import isOnlyDigits
 
 
 
@@ -12,6 +13,7 @@ MAX_GUESSES = 10
 
 
 def main():
+    
     print(f'''Juego de deduccion en base a la logica.
 
 
@@ -27,21 +29,21 @@ Cuando diga:    Significa:
 
     while True:
         # Esto guarda el numero secreto que el jugador debe adivinar en una variable.
-        secretNum = getSecretNum()
+        secretNum = getSecretNum(NUM_DIGITS)
         print('Acabo de pensar un numero.')
-        print(f'Tenes {MAX_GUESSES} intento para adivinar.')
+        print(f'Tenes {MAX_GUESSES} intentos para adivinar.')
 
         numGuesses = 1
         while numGuesses <= MAX_GUESSES:
             guess = ''
             # Sigue en el loop hasta que entran un dato valido.
-            while len(guess) != NUM_DIGITS or not guess.isdecimal():
+            while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
                 print(f'Intento #{numGuesses}')
-            guess = input('> ')
+                guess = input('> ')
 
-            clues = getClues(guess, secretNum)
+            clues = Clues.getClues(guess, secretNum)
             print(clues)
-            guess += 1
+            numGuesses += 1
 
             if guess == secretNum:
                 break #Adivinaron asi que el loop se rompe.
@@ -50,7 +52,10 @@ Cuando diga:    Significa:
                 print(f'Tu numero secreto era {secretNum}')
 
             #Pregunta si queres jugar otra vez.
-            print('Queres jugar otra vez? (si/no)')
-            if not input('> ').lower().startwith('y'):
-                break
-            print('GRACIAS POR JUGAR')
+        print('Queres jugar otra vez? (si/no)')
+        if not input('> ').lower().startswith('s'):
+            break
+        print('GRACIAS POR JUGAR')
+
+if __name__ == '__main__':
+    main()
