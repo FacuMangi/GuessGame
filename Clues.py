@@ -10,9 +10,9 @@ def getClues(guess, secretNum):
         if guess[i] == secretNum[i]:
             clue.append('Teto')
         elif guess[i] in secretNum:
-            clue.append('Tito')
+            clue.append('Tato')
     if len(clue) == 0:
-        return 'Tato'
+        return 'Tito'
     
     clue.sort()
     return' '.join(clue)

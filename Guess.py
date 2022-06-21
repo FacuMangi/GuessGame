@@ -2,18 +2,20 @@ import random
 from SecretNum import getSecretNum
 import Clues
 from itsOnlyDigits import isOnlyDigits
+import Dificulty
 
 
 
 
 
-
-NUM_DIGITS = 3
 MAX_GUESSES = 10
 
 
 def main():
-    
+    print ('Nivel de dificultad? (1, 2 o 3)')
+    selection = input('>')
+    NUM_DIGITS = Dificulty.setDificulty(selection)
+
     print(f'''Juego de deduccion en base a la logica.
 
 
