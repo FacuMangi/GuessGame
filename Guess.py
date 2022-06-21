@@ -20,9 +20,9 @@ def main():
 Estoy pensando en un numero de {NUM_DIGITS} digitos.
 Trata de adivinar cual es. Aqui hay algunas pistas:
 Cuando diga:    Significa:
-    Tito        Un digito es correcto pero esta en la posicion equivocada.
+    Tato        Un digito es correcto pero esta en la posicion equivocada.
     Teto        Un digito es correcto y esta en la posicion correcta.
-    Tato        Ningun digito es correcto.''')
+    Tito        Ningun digito es correcto.''')
 
 
 
