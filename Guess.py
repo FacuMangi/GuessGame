@@ -15,7 +15,7 @@ def main():
     print ('Nivel de dificultad? (1, 2 o 3)')
     selection = input('>')
     NUM_DIGITS = Dificulty.setDificulty(selection)
-
+    
     print(f'''Juego de deduccion en base a la logica.
 
 
