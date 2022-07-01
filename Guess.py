@@ -48,7 +48,9 @@ Cuando diga:    Significa:
             numGuesses += 1
 
             if guess == secretNum:
+                print('¡Adivinaste!')
                 break #Adivinaron asi que el loop se rompe.
+            
             if numGuesses > MAX_GUESSES:
                 print('Se te acabaron los intentos :(')
                 print(f'Tu numero secreto era {secretNum}')
